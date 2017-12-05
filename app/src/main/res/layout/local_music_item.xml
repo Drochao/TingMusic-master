@@ -28,7 +28,7 @@
             android:id="@+id/local_music_item_ll"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@drawable/selector_layout"
+            android:background="@color/common_bg"
             android:clickable="true"
             android:orientation="horizontal">
 
@@ -90,7 +90,7 @@
                         android:layout_marginRight="10dp"
                         android:padding="15dp"
                         android:clickable="true"
-                        android:src="@drawable/selector_never_menu" />
+                        android:src="@drawable/never_menu" />
                 </LinearLayout>
 
                 <View

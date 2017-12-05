@@ -7,7 +7,7 @@ android {
     compileSdkVersion 24
     buildToolsVersion '25.0.0'
     defaultConfig {
-        applicationId "com.lijunyan.blackmusic"
+        applicationId "com.dntz.tingmusic"
         minSdkVersion 15
         targetSdkVersion 24
         versionCode 2

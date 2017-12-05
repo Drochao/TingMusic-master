@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="60dp"
     android:id="@+id/play_list_content_swip_view"
-    android:background="@drawable/selector_layout"
+    android:background="@color/common_bg"
     android:orientation="vertical"
     android:clickable="true"
     app:swipeEnable="true">
@@ -14,7 +14,7 @@
         android:layout_height="match_parent"
         android:id="@+id/play_list_content_ll"
         android:clickable="true"
-        android:background="@drawable/selector_layout"
+        android:background="@color/common_bg"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 

@@ -5,7 +5,7 @@
     android:id="@+id/activity_local_music"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:activity="com.lijunyan.blackmusic.activity.LocalMusicActivity">
+    tools:activity="com.dntz.tingmusic.activity.LocalMusicActivity">
     <android.support.v7.widget.Toolbar
         android:id="@+id/local_music_toolbar"
         android:layout_width="match_parent"
@@ -41,10 +41,9 @@
         android:id="@+id/local_shadow"
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:background="@drawable/shadow_view"
         android:layout_below="@id/local_tab"></View>
 
-    <com.lijunyan.blackmusic.view.MyViewPager
+    <com.dntz.tingmusic.view.MyViewPager
         android:id="@+id/local_viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

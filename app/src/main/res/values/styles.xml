@@ -139,11 +139,6 @@
         <item name="android:taskToBackExitAnimation">@null</item>
     </style>
 
-    <style name="pop_window_animation" parent="android:Animation">
-        <item name="android:windowEnterAnimation">@anim/pop_enter</item>
-        <item name="android:windowExitAnimation">@anim/pop_exit</item>
-    </style>
-
     <style name="PlaylistActivityTheme" parent="AppTheme">
     </style>
 

@@ -4,7 +4,7 @@
     android:id="@+id/activity_last_mylove"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:activity="com.lijunyan.blackmusic.activity.LastMyloveActivity">
+    tools:activity="com.dntz.tingmusic.activity.LastMyloveActivity">
     <android.support.v7.widget.Toolbar
         android:id="@+id/last_mylove_toolbar"
         android:layout_width="match_parent"

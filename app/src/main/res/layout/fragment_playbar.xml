@@ -91,16 +91,7 @@
                     android:clickable="true"
                     android:padding="10dp"
                     android:tint="?attr/image_tint"
-                    android:src="@drawable/selector_next_play_bar" />
-
-                <!--//版本1.03<ImageView-->
-                    <!--android:id="@+id/play_menu_iv"-->
-                    <!--android:layout_width="40dp"-->
-                    <!--android:layout_height="40dp"-->
-                    <!--android:clickable="true"-->
-                    <!--android:padding="10dp"-->
-                    <!--android:tint="?attr/image_tint"-->
-                    <!--android:src="@drawable/selector_menu" />-->
+                    android:src="@drawable/next" />
             </LinearLayout>
         </LinearLayout>
 
