@@ -24,7 +24,7 @@ import com.dntz.tingmusic.util.MyMusicUtil;
 import java.util.List;
 
 /**
- * Created by lijunyan on 2017/3/28.
+ * Created by dntz on 2017/3/28.
  */
 
 public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistAdapter.ViewHolder> {

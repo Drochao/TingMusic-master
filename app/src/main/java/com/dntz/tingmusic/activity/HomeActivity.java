@@ -13,6 +13,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
@@ -48,7 +49,6 @@ public class HomeActivity extends PlayBarBaseActivity {
     private TextView lastPlayCountTv;
     private TextView myLoveCountTv;
     private TextView myPLCountTv;
-    private ImageView myPLArrowIv;
     private ImageView myPLAddIv;
     private ListView listView;
     private HomeListViewAdapter adapter;
@@ -75,36 +75,14 @@ public class HomeActivity extends PlayBarBaseActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setHomeAsUpIndicator(R.drawable.drawer_menu);
         }
+
+
         //版本更新 1.10refreshNightModeTitle();
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
                 mDrawerLayout.closeDrawers();
                 switch (item.getItemId()){
-
-//                    case R.id.nav_theme:
-//                        isStartTheme = true;
-//                        Intent intentTheme = new Intent(HomeActivity.this,ThemeActivity.class);
-//                        startActivity(intentTheme);
-//                        break;
-//                  case R.id.nav_night_mode:
-//                        int preTheme = 0;
-//                        if(MyMusicUtil.getNightMode(HomeActivity.this)){
-//                            //当前为夜间模式，则恢复之前的主题
-//                            MyMusicUtil.setNightMode(HomeActivity.this,false);
-//                            preTheme = MyMusicUtil.getPreTheme(HomeActivity.this);
-//                            MyMusicUtil.setTheme(HomeActivity.this,preTheme);
-//                        }else {
-//                            //当前为白天模式，则切换到夜间模式
-//                            MyMusicUtil.setNightMode(HomeActivity.this,true);
-//                            MyMusicUtil.setTheme(HomeActivity.this,ThemeActivity.THEME_SIZE-1);
-//                        }
-////                        Intent intentNight = new Intent(HomeActivity.this,HomeActivity.class);
-////                        startActivity(intentNight);
-//                        recreate();
-//                        refreshNightModeTitle();
-////                        overridePendingTransition(R.anim.start_anim,R.anim.out_anim);
-//                        break;
                     case R.id.nav_about_me:
                         Intent aboutTheme = new Intent(HomeActivity.this,AboutActivity.class);
                         startActivity(aboutTheme);
@@ -128,13 +106,6 @@ public class HomeActivity extends PlayBarBaseActivity {
 
     }
 
-//    private void refreshNightModeTitle(){
-//        if (MyMusicUtil.getNightMode(HomeActivity.this)){
-//            navView.getMenu().findItem(R.id.nav_night_mode).setTitle("日间模式");
-//        }else {
-//            navView.getMenu().findItem(R.id.nav_night_mode).setTitle("夜间模式");
-//        }
-//    }
 
     @Override
     protected void onResume() {
@@ -160,7 +131,6 @@ public class HomeActivity extends PlayBarBaseActivity {
         lastPlayCountTv = (TextView) findViewById(R.id.home_recently_music_count_tv);
         myLoveCountTv = (TextView) findViewById(R.id.home_my_love_music_count_tv);
         myPLCountTv = (TextView) findViewById(R.id.home_my_list_count_tv);
-        myPLArrowIv = (ImageView) findViewById(R.id.home_my_pl_arror_iv);
         myPLAddIv = (ImageView) findViewById(R.id.home_my_pl_add_iv);
 
         localMusicLl.setOnClickListener(new View.OnClickListener() {
@@ -224,24 +194,6 @@ public class HomeActivity extends PlayBarBaseActivity {
                 builder.show();//配置好后再builder show
             }
         });
-        myListTitleLl.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //展现我的歌单
-                if (isOpenMyPL){
-                    isOpenMyPL = false;//切换状态
-                    myPLArrowIv.setImageResource(R.drawable.arrow_right);
-                    listView.setVisibility(View.GONE);
-                }else {
-                    isOpenMyPL = true;
-                    myPLArrowIv.setImageResource(R.drawable.arrow_down);
-                    listView.setVisibility(View.VISIBLE);
-                    playListInfos = dbManager.getMyPlayList();
-                    adapter = new HomeListViewAdapter(playListInfos,HomeActivity.this,dbManager);
-                    listView.setAdapter(adapter);
-                }
-            }
-        });
     }
 
     public void updatePlaylistCount(){
@@ -281,15 +233,21 @@ public class HomeActivity extends PlayBarBaseActivity {
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.local_music_menu,menu);
+        return true;
+    }
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-            case android.R.id.home:
-                mDrawerLayout.openDrawer(GravityCompat.START);
-                break;
-            default:
-                break;
+        super.onOptionsItemSelected(item);
+        if (item.getItemId() == R.id.scan_local_menu){
+            Intent intent = new Intent(HomeActivity.this,ScanActivity.class);
+            startActivity(intent);
+        }else if (item.getItemId() == android.R.id.home){
+            mDrawerLayout.openDrawer(GravityCompat.START);
         }
-        return super.onOptionsItemSelected(item);
+        return true;
     }
 
 private void loadBingPic() {

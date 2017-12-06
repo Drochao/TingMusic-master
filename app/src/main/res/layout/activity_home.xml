@@ -33,15 +33,6 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/home_local_music_iv"
-                    android:layout_width="25dp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_vertical"
-                    android:layout_margin="10dp"
-                    android:tint="?attr/image_tint"
-                    android:src="@drawable/phone" />
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -53,6 +44,7 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:layout_marginLeft="20dp"
                             android:id="@+id/home_local_music_tv"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
@@ -96,14 +88,6 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/home_recently_music_iv"
-                    android:layout_width="25dp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_vertical"
-                    android:layout_margin="10dp"
-                    android:tint="?attr/image_tint"
-                    android:src="@drawable/recently" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -116,6 +100,7 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:layout_marginLeft="20dp"
                             android:id="@+id/home_recently_music_tv"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
@@ -156,15 +141,6 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/home_my_love_music_iv"
-                    android:layout_width="25dp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_vertical"
-                    android:layout_margin="10dp"
-                    android:tint="?attr/image_tint"
-                    android:src="@drawable/love" />
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -176,6 +152,7 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:layout_marginLeft="20dp"
                             android:id="@+id/home_my_love_music_tv"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
@@ -235,7 +212,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginLeft="20dp"
                     android:gravity="center_vertical"
                     android:text="自建的歌单" />
 
@@ -251,16 +228,10 @@
                     android:id="@+id/home_my_pl_add_iv"
                     android:layout_width="20dp"
                     android:layout_height="match_parent"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="20dp"
                     android:clickable="true"
                     android:src="@drawable/add_menu" />
 
-                <ImageView
-                    android:id="@+id/home_my_pl_arror_iv"
-                    android:layout_width="20dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginRight="16dp"
-                    android:src="@drawable/arrow_right" />
             </LinearLayout>
 
             <View
@@ -273,8 +244,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:divider="@drawable/divider_home_list"
-                android:dividerHeight="1dp"
-                android:visibility="gone"></ListView>
+                android:dividerHeight="1dp"></ListView>
 
         </LinearLayout>
 
@@ -282,8 +252,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/home_my_list_ll"
-            android:background="?attr/appbg"
-            android:visibility="gone"/>
+            android:background="?attr/appbg" />
 
     </RelativeLayout>
 

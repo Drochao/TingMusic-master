@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -43,7 +42,6 @@ public class PlaylistActivity extends PlayBarBaseActivity {
     private PlayListInfo playListInfo;
     private Toolbar toolbar;
     private TextView noneTv;//没有歌单时现实的TextView
-    private ImageView bgIv;
     private DBManager dbManager;
     private UpdateReceiver mReceiver;
 
@@ -52,7 +50,6 @@ public class PlaylistActivity extends PlayBarBaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_playlist);
 
-        loadBingPic();
         playListInfo = getIntent().getParcelableExtra("playlistInfo");
 
 
@@ -62,10 +59,8 @@ public class PlaylistActivity extends PlayBarBaseActivity {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setTitle(playListInfo.getName());
         }
-
-        CollapsingToolbarLayout mCollapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsingToolbarLayout);
-        mCollapsingToolbarLayout.setTitle(playListInfo.getName());
 
         dbManager = DBManager.getInstance(this);
         musicInfoList = dbManager.getMusicListByPlaylist(playListInfo.getId());
@@ -225,22 +220,5 @@ public class PlaylistActivity extends PlayBarBaseActivity {
         public void onReceive(Context context, Intent intent) {
             playlistAdapter.notifyDataSetChanged();
         }
-    }
-//自己设置图片
-    private void loadBingPic(){
-        bgIv = (ImageView) findViewById(R.id.playlist_head_bg_iv);
-       // Glide.with(MyApplication.getContext()).load(R.drawable.album).into(bgIv);
-        bgIv.setImageResource(R.drawable.bg_playlist);
-//        try {
-//            bgIv = (ImageView) findViewById(R.id.playlist_head_bg_iv);
-//            String bingPic = MyMusicUtil.getBingShared();
-//            if (bingPic != null) {
-//                Glide.with(this).load(bingPic).into(bgIv);
-//            } else {
-//                bgIv.setImageResource(R.drawable.bg_playlist);
-//            }
-//        }catch (Exception e){
-//            e.printStackTrace();
-//        }
     }
 }

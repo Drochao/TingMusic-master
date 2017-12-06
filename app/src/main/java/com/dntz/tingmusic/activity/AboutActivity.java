@@ -18,8 +18,6 @@ public class AboutActivity extends BaseActivity{
 
     private Toolbar toolbar;
     private TextView versionTv;
-    private LinearLayout startLl;
-    private LinearLayout scoreLl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,29 +34,7 @@ public class AboutActivity extends BaseActivity{
         }
 
         versionTv = (TextView) findViewById(R.id.about_version);
-        startLl = (LinearLayout) findViewById(R.id.about_start_ll);
-        scoreLl = (LinearLayout) findViewById(R.id.about_score_ll);
         versionTv.setText(getVersion());
-
-        startLl.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openUrl("https://github.com/lijunyandev/MeetMusic");
-            }
-        });
-        scoreLl.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openUrl("http://www.coolapk.com/apk/com.lijunyan.blackmusic");
-            }
-        });
-    }
-
-
-    private void openUrl(String url) {
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(url));
-        startActivity(intent);
     }
 
     @Override

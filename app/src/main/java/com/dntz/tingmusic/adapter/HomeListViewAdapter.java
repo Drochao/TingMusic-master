@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by lijunyan on 2017/2/26.
+ * Created by dntz on 2017/2/26.
  */
 
 public class HomeListViewAdapter extends BaseAdapter {

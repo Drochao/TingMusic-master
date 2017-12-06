@@ -30,7 +30,7 @@ import java.io.File;
 
 
 /**
- * Created by lijunyan on 2017/2/22.
+ * Created by dntz on 2017/10/22.
  */
 
 public class MusicPopMenuWindow extends PopupWindow{
@@ -39,10 +39,8 @@ public class MusicPopMenuWindow extends PopupWindow{
     private View view;
     private Activity activity;
     private TextView nameTv;
-//    private LinearLayout playLl;
     private LinearLayout addLl;
     private LinearLayout loveLl;
-//    private LinearLayout ringLl;
     private LinearLayout deleteLl;
     private LinearLayout cancelLl;
     private MusicInfo musicInfo;
@@ -85,10 +83,6 @@ public class MusicPopMenuWindow extends PopupWindow{
         // 设置弹出窗体的背景
         this.setBackgroundDrawable(activity.getResources().getDrawable(R.color.colorWhite));
 
-        // 设置弹出窗体显示时的动画，从底部向上弹出
-        //版本1.04 this.setAnimationStyle(R.style.pop_window_animation);
-
-
         // 添加OnTouchListener监听判断获取触屏位置，如果在选择框外面则销毁弹出框
         this.view.setOnTouchListener(new View.OnTouchListener() {
 
@@ -106,23 +100,12 @@ public class MusicPopMenuWindow extends PopupWindow{
 
 
         nameTv = (TextView)view.findViewById(R.id.popwin_name_tv);
-//        playLl = (LinearLayout) view.findViewById(R.id.popwin_play_ll);
         addLl = (LinearLayout) view.findViewById(R.id.popwin_add_rl);
         loveLl = (LinearLayout) view.findViewById(R.id.popwin_love_ll);
-//        ringLl = (LinearLayout) view.findViewById(R.id.popwin_ring_ll);
         deleteLl = (LinearLayout) view.findViewById(R.id.popwin_delete_ll);
         cancelLl = (LinearLayout) view.findViewById(R.id.popwin_cancel_ll);
 
         nameTv.setText("歌曲： " + musicInfo.getName());
-
-//        playLl.setOnClickListener(new View.OnClickListener() {
-//
-//            public void onClick(View v) {
-//                MyMusicUtil.playNextMusic(activity);
-//
-//                dismiss();
-//            }
-//        });
 
         addLl.setOnClickListener(new View.OnClickListener() {
 
@@ -150,23 +133,10 @@ public class MusicPopMenuWindow extends PopupWindow{
 
             public void onClick(View v) {
                 MyMusicUtil.setMusicMylove(activity,musicInfo.getId());
+                Toast.makeText(activity,"添加成功",Toast.LENGTH_SHORT).show();
                 dismiss();
-                View view = LayoutInflater.from(activity).inflate(R.layout.my_love_toast,null);
-                Toast toast = new Toast(activity);
-                toast.setView(view);
-                toast.setDuration(Toast.LENGTH_SHORT);
-                toast.setGravity(Gravity.CENTER,0,0);
-                toast.show();
             }
         });
-
-//        ringLl.setOnClickListener(new View.OnClickListener() {
-//
-//            public void onClick(View v) {
-//                MyMusicUtil.setMyRingtone(activity);
-//                dismiss();
-//            }
-//        });
 
         deleteLl.setOnClickListener(new View.OnClickListener() {
 

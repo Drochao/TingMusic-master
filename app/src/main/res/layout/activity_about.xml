@@ -38,7 +38,7 @@
             android:background="?attr/divider"
             android:gravity="center_vertical"
             android:paddingLeft="16dp"
-            android:text="关于作者" />
+            android:text="关于我们" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -51,7 +51,7 @@
                 android:gravity="center_vertical|bottom"
                 android:paddingBottom="3dp"
                 android:paddingLeft="20dp"
-                android:text="邮箱"/>
+                android:text="董浩鹏"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -59,7 +59,7 @@
                 android:gravity="center_vertical|top"
                 android:paddingLeft="20dp"
                 android:paddingTop="3dp"
-                android:text="lijunyandev@foxmail.com" />
+                android:text="1440610208" />
         </LinearLayout>
         <View
             android:layout_width="match_parent"
@@ -76,7 +76,7 @@
                 android:gravity="center_vertical|bottom"
                 android:paddingBottom="3dp"
                 android:paddingLeft="20dp"
-                android:text="Github" />
+                android:text="甯羿书" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -84,61 +84,24 @@
                 android:gravity="center_vertical|top"
                 android:paddingLeft="20dp"
                 android:paddingTop="3dp"
-                android:text="https://github.com/lijunyandev" />
-        </LinearLayout>
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="?attr/divider"
-            android:gravity="center_vertical"
-            android:paddingLeft="16dp"
-            android:text="其他" />
-
-        <LinearLayout
-            android:id="@+id/about_start_ll"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:clickable="true"
-            android:background="@color/common_bg"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:gravity="center_vertical|bottom"
-                android:paddingBottom="3dp"
-                android:paddingLeft="20dp"
-                android:text="给我点赞"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:gravity="center_vertical|top"
-                android:paddingLeft="20dp"
-                android:paddingTop="3dp"
-                android:text="前往我的github项目给个start" />
+                android:text="1440610210" />
         </LinearLayout>
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="?attr/divider"></View>
         <LinearLayout
-            android:id="@+id/about_score_ll"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:clickable="true"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:gravity="center_vertical|bottom"
                 android:paddingBottom="3dp"
                 android:paddingLeft="20dp"
-                android:text="给个评价" />
+                android:text="涂洒" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -146,8 +109,34 @@
                 android:gravity="center_vertical|top"
                 android:paddingLeft="20dp"
                 android:paddingTop="3dp"
-                android:text="前往应用商店评价或评分" />
+                android:text="1440610232" />
         </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?attr/divider"></View>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:gravity="center_vertical|bottom"
+                android:paddingBottom="3dp"
+                android:paddingLeft="20dp"
+                android:text="曾文超" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:gravity="center_vertical|top"
+                android:paddingLeft="20dp"
+                android:paddingTop="3dp"
+                android:text="1440610234" />
+        </LinearLayout>
+
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
